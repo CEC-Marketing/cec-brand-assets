@@ -33,15 +33,17 @@ cec-brand-assets/
 ├─ backgrounds/             ← 12 brand background JPGs (1200×1200)
 ├─ characters/              ← 155 character PNGs across 7 character folders + 2 group shots
 ├─ graphic-elements/        ← 42 PNGs (4 underlines + 2 dot patterns + 17 coins + 7 3D props + 6 round wrappers + 6 stars)
+├─ icons/                   ← 8,390 icon & emoji PNGs across 6 sets (incl. full Apple + OpenMoji emoji libraries)
 ├─ logos/                   ← 90 logo files across 10 CEC sub-brand folders + 1 competitor-logos folder
-├─ photos/                  ← 191 real-world photos across 8 themed subfolders
-└─ weather-icons/           ← 24 glossy weather-condition PNGs for dashboards & data displays
+└─ photos/                  ← 191 real-world photos across 8 themed subfolders
 ```
 
 **Naming convention:** Every file and folder uses **lowercase kebab-case** — no spaces, no
-underscores, no uppercase letters. URLs work as-is without `%20` encoding.
+underscores, no uppercase letters. URLs work as-is without `%20` encoding. The two large emoji
+libraries (`icons/apple/`, `icons/openmoji/`) were renamed from Unicode codepoints to their
+descriptive emoji names, so they follow the same pick-by-intent convention as everything else.
 
-**Total: 514 files.**
+**Total: 8,880 files.**
 
 ---
 
@@ -702,7 +704,97 @@ carry "vibe and emotion" in any deck — pull from here when the slide needs a r
 
 ---
 
-## 6. `weather-icons/` — Weather-condition icons (PNG with transparency)
+## 6. `icons/` — Icon & emoji libraries (PNG with transparency)
+
+General-purpose icon and emoji PNGs for **dashboards, emails, data displays, status tiles, and
+deck visuals** — the utility layer that sits alongside the brand artwork above. Six sets, all
+transparent PNGs:
+
+| Set | Files | What it is |
+| --- | --- | --- |
+| `icons/emojis/` | 7 | A few CEC-flavored emoji accents (trophy, heart, cheeseburger, etc.). |
+| `icons/business-icons/` | 80 | Flat single-color business / contact / ops UI icons. |
+| `icons/social-icons/` | 11 | Social-platform marks (Facebook, Instagram, TikTok, …). |
+| `icons/weather-icons/` | 24 | Glossy 3D weather-condition symbols (moved here from the old top-level `weather-icons/`). |
+| `icons/apple/` | 3,773 | Full **Apple-style** Unicode emoji library. |
+| `icons/openmoji/` | 4,495 | Full **OpenMoji** open-source Unicode emoji library. |
+
+The two big libraries (`apple/`, `openmoji/`) are complete Unicode emoji sets. Their files were
+renamed from raw codepoints (`1f600.png`) to descriptive emoji names (`grinning-face.png`,
+`pizza.png`, `birthday-cake.png`) so you can pull one by intent, by name or by URL, without
+opening it. Where two glyphs resolve to the same name — Unicode keycap symbols, and a handful of
+OpenMoji's own "extra" glyphs that duplicate a standard emoji — the canonical one keeps the clean
+name and the variant carries a codepoint suffix (e.g. `scroll.png` vs `scroll-e104.png`,
+`keycap-hash.png` / `keycap-asterisk.png`).
+
+> **Usage note:** `icons/openmoji/` is OpenMoji artwork, licensed **CC BY-SA 4.0** — free to use
+> and modify with attribution to the OpenMoji project. `icons/apple/` are **Apple's copyrighted
+> emoji artwork**; they're fine for internal mockups and comps, but confirm licensing before
+> using them in published, customer-facing, or commercial materials. When in doubt, reach for the
+> OpenMoji equivalent (same name) instead.
+
+---
+
+### 6.1 `icons/emojis/` — CEC-flavored emoji accents (7 PNGs)
+
+A small set of standalone emoji-style accent graphics.
+
+| File | Description |
+| --- | --- |
+| `ambulance.png` | Ambulance / emergency vehicle. |
+| `champagne.png` | Champagne bottle popping — celebration / toast. |
+| `cheeseburger.png` | Cheeseburger. |
+| `covid.png` | Virus / COVID symbol. |
+| `gold-heart.png` | Gold heart. |
+| `gold-trophy.png` | Gold trophy — winner / award callouts. |
+| `travel.png` | Travel / vacation motif. |
+
+---
+
+### 6.2 `icons/business-icons/` — Flat business & contact icons (80 PNGs)
+
+Flat, single-color business / contact / operations icons for org charts, contact blocks,
+internal decks, and ops dashboards. Descriptive kebab-case filenames — pick by name:
+
+`accident`, `address`, `business-strategy`, `calendar`, `call-center`, `call`, `car`, `career`,
+`chat`, `claim`, `clock`, `commercial`, `community`, `company`, `conference`, `contact-card`,
+`contact-form`, `contact-page`, `contact`, `corporate`, `customer-service`, `customer-support`,
+`department`, `email`, `emergency`, `employee`, `envelope`, `fax`, `handshake`, `health`,
+`help-desk`, `hierarchy`, `home`, `hotline`, `hotline-1`, `human-resources`, `insurance`, `job`,
+`leadership`, `life`, `live-chat`, `location`, `manager`, `map`, `messaging`, `messaging-1`,
+`microphone`, `mobile`, `networking`, `office`, `online-support`, `organization`,
+`organizational-chart`, `partnership`, `performance-review`, `pet`, `phone-call`, `phone`,
+`placer-map`, `policy-doc`, `presentation`, `presentation-screen`, `recruitment`, `reply`,
+`risk-management`, `seminar`, `send-message`, `service-agent`, `skill-development`, `staff`,
+`support`, `support-ticket`, `target`, `task-management`, `team-meeting`, `teamwork`,
+`teamwork-1`, `training`, `website`, `workflow`.
+
+> A few names carry `-1` duplicate suffixes (`hotline-1`, `messaging-1`, `teamwork-1`) — second
+> stylistic variants of the same icon — listed exactly as stored so the URLs resolve.
+
+---
+
+### 6.3 `icons/social-icons/` — Social-platform marks (11 PNGs)
+
+Flat platform logos for footers, "follow us" rows, and contact slides.
+
+| File | Platform |
+| --- | --- |
+| `facebook.png` | Facebook |
+| `instagram.png` | Instagram |
+| `linkedin.png` | LinkedIn |
+| `pinterest.png` | Pinterest |
+| `snapchat.png` | Snapchat |
+| `telegram.png` | Telegram |
+| `threads.png` | Threads |
+| `tiktok.png` | TikTok |
+| `twitter.png` | X / Twitter |
+| `whatsapp.png` | WhatsApp |
+| `youtube.png` | YouTube |
+
+---
+
+### 6.4 `icons/weather-icons/` — Weather-condition icons (24 PNGs)
 
 A 24-icon set of glossy, glass-style weather symbols for **dashboards, data displays,
 status tiles, and presentation visuals** (e.g. an event-day forecast, a store-conditions
@@ -745,6 +837,43 @@ heavy) that differ only in glyph size/density — use them as ordered intensity 
 **Picking a subset:** if you only need a few states, the core five are `clear-sunny`,
 `partly-cloudy-night` (or `partly-sunny`), `cloudy`, `rain-moderate`, and `snow`. For rain or
 snow intensity, use the `-light` / `(base)` / `-heavy` ramp rather than mixing glyph styles.
+
+---
+
+### 6.5 `icons/apple/` — Apple-style Unicode emoji library (3,773 PNGs)
+
+The complete Apple-style emoji set — every standard Unicode emoji as a transparent PNG, including
+faces, hands, people, animals, food, activities, travel, objects, symbols, flags, and keycaps.
+Files are named by their descriptive emoji name in kebab-case, so pull by intent:
+
+```
+icons/apple/grinning-face.png
+icons/apple/birthday-cake.png
+icons/apple/pizza.png
+icons/apple/party-popper.png
+icons/apple/flag-united-states.png
+```
+
+These are the warm, glossy 3D-style glyphs familiar from iOS. See the usage note above re:
+Apple's copyright before using them in customer-facing materials.
+
+---
+
+### 6.6 `icons/openmoji/` — OpenMoji Unicode emoji library (4,495 PNGs)
+
+The complete [OpenMoji](https://openmoji.org) set — an open-source, line-art emoji library
+covering the full Unicode emoji range plus OpenMoji's own extra glyphs. Same descriptive
+kebab-case naming as `apple/`, so the same name usually resolves in both sets:
+
+```
+icons/openmoji/grinning-face.png
+icons/openmoji/birthday-cake.png
+icons/openmoji/pizza.png
+```
+
+OpenMoji's flatter, outlined style reads more cleanly at small sizes and on busy backgrounds, and
+it's licensed **CC BY-SA 4.0** — making it the safe default for published dashboards, emails, and
+decks when you don't need Apple's specific look.
 
 ---
 
