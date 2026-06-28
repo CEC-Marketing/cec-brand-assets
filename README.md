@@ -6,7 +6,7 @@ any of these into a deck, a web page, or other materials by name or by stable
 GitHub URL:
 
 ```
-https://raw.githubusercontent.com/markkupferman/cec-brand-assets/main/<path-to-file>
+https://raw.githubusercontent.com/CEC-Marketing/cec-brand-assets/main/<path-to-file>
 ```
 
 All filenames are descriptive kebab-case so you can pick by intent without opening the file
