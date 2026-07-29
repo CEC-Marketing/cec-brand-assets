@@ -211,8 +211,15 @@ Drop a photo/character inside; the gradient becomes a soft chromatic halo.
 Color combos: `blue-orange`, `blue-purple`, `green-purple`, `green-purple2`, `orange-green`, `orange-purple`.
 
 ### `graphic-elements/stars/` — Decorative star icons (6 PNGs)
-- `4-points-star-icon.png`, `4-points-star2-icon.png` — 4-point sparkles.
-- `star-icon.png`, `star-icons-1.png`, `star-icons-2.png`, `star-icons-3.png` — 5-point stars in scattered groupings.
+
+All six carry the `nbn-23-graphic-element-` source prefix — use the full name; the
+short form 404s.
+
+- `nbn-23-graphic-element-4-points-star-icon.png`,
+  `nbn-23-graphic-element-4-points-star2-icon.png` — 4-point sparkles.
+- `nbn-23-graphic-element-star-icon.png`, `nbn-23-graphic-element-star-icons-1.png`,
+  `nbn-23-graphic-element-star-icons-2.png`, `nbn-23-graphic-element-star-icons-3.png`
+  — 5-point stars in scattered groupings.
 
 ---
 
