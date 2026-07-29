@@ -1,7 +1,8 @@
-# Chuck E. Cheese Brand Assets
+# CEC Entertainment Brand Assets
 
-Public bundle of brand-safe visual assets for Chuck E. Cheese marketing materials —
-**logos, photography, character cutouts, brand backgrounds, and graphic elements.** Pull
+Public bundle of brand-safe visual assets across the CEC Entertainment family —
+**Chuck E. Cheese**, **Peter Piper Pizza**, and the **CEC Entertainment** corporate brand
+itself: **logos, photography, character cutouts, brand backgrounds, and graphic elements.** Pull
 any of these into a deck, a web page, or other materials by name or by stable
 GitHub URL:
 
@@ -34,7 +35,7 @@ cec-brand-assets/
 ├─ characters/              ← 155 character PNGs across 7 character folders + 2 group shots
 ├─ graphic-elements/        ← 42 PNGs (4 underlines + 2 dot patterns + 17 coins + 7 3D props + 6 round wrappers + 6 stars)
 ├─ icons/                   ← 8,390 icon & emoji PNGs across 6 sets (incl. full Apple + OpenMoji emoji libraries)
-├─ logos/                   ← 106 logo files: 62 CEC across 10 brand folders + 16 Peter Piper across 2 + 28 competitor
+├─ logos/                   ← 112 logo files: 62 Chuck E. Cheese across 10 brand folders + 16 Peter Piper across 2 + 6 CEC Entertainment corporate + 28 competitor
 └─ photos/                  ← 191 real-world photos across 8 themed subfolders
 ```
 
@@ -43,7 +44,7 @@ underscores, no uppercase letters. URLs work as-is without `%20` encoding. The t
 libraries (`icons/apple/`, `icons/openmoji/`) were renamed from Unicode codepoints to their
 descriptive emoji names, so they follow the same pick-by-intent convention as everything else.
 
-**Total: 8,896 files.**
+**Total: 8,902 files.**
 
 ---
 
@@ -225,12 +226,18 @@ short form 404s.
 
 ## 4. `logos/` — Logo lockups (PNG / JPG)
 
-106 logo files in three groups: **62 Chuck E. Cheese logos** across the master-brand folder
+112 logo files in four groups: **62 Chuck E. Cheese logos** across the master-brand folder
 plus 9 CEC sub-brand folders; **16 Peter Piper Pizza logos** across `peter-piper-pizza/` and
-`peter-piper-play-park/` (PPP is a separate banner brand, not a CEC sub-brand); and **28
-competitor logos** in `competitor-logos/` (see the competitor-logos section at the end of
-§4). All filenames are descriptive kebab-case so an AI can pick by intent (layout + tagline
+`peter-piper-play-park/` (PPP is a separate banner brand, not a CEC sub-brand); **6 CEC
+Entertainment corporate logos** in `cec-entertainment/` (the parent company, distinct from
+both restaurant banners); and **28 competitor logos** in `competitor-logos/` (see the
+competitor-logos section at the end of §4). All filenames are descriptive kebab-case so an AI can pick by intent (layout + tagline
 + color treatment).
+
+> **`cec-` means Chuck E. Cheese; `cecent-` means CEC Entertainment (the parent company).**
+> `cec-logo-*` and `cec-mark-roundel` are the Chuck E. Cheese restaurant brand. The corporate
+> logos in `logos/cec-entertainment/` use the `cecent-` prefix so the two can never be
+> confused by name alone.
 
 **Master CEC brand naming convention** (sub-brand folders follow simpler patterns):
 
@@ -349,6 +356,54 @@ weights.
   artwork does **not** fill evenly — it sits bottom-anchored (opaque bounds are x 42–1845,
   y 283–1080), so ~26% of the top is empty and the mark runs flush to the bottom edge.
   Trim to the alpha bounding box before placing it, or it will look badly off-center.
+
+### `logos/cec-entertainment/` (6 files) — the parent company
+
+**CEC Entertainment is the parent company, not a restaurant brand.** It owns Chuck E. Cheese,
+Peter Piper Pizza, and the Pasqually's Pizza & Wings virtual kitchen. Use these on corporate
+material — investor and board decks, enterprise/internal tooling, HR and recruiting, supplier
+and franchise documents, anything speaking for the company rather than for a restaurant.
+**Do not** use a corporate logo as a stand-in for Chuck E. Cheese or Peter Piper on
+guest-facing work, and don't put it on the same lockup as a restaurant banner.
+
+The mark is a blue `C`, green `E`, red `C` with a blue "entertainment" wordmark. Filenames use
+the **`cecent-`** prefix, because bare `cec-` already means Chuck E. Cheese in this repo.
+
+| File | Description |
+| --- | --- |
+| `cecent-logo-horizontal.png` | Mark + "entertainment" wordmark on one line (1513x131). The workhorse for headers, mastheads, and footer bylines. |
+| `cecent-logo-horizontal-white.png` | Same, solid white knockout for dark backgrounds. |
+| `cecent-logo-stacked.png` | Mark above the wordmark, centered (900x459). For portrait compositions, title slides, and square crops. |
+| `cecent-logo-stacked-white.png` | Same, solid white knockout. |
+| `cecent-mark.png` | The `CEC` letterforms alone, no wordmark (900x333). Favicon, social avatar, or anywhere the company name is already stated. |
+| `cecent-mark-white.png` | Same, solid white knockout. |
+
+**Corporate palette** (2023 brand guidelines; distinct from both restaurant palettes -- no
+purple, no Peter Piper red):
+
+| Role | Color | Hex | PMS | Contrast on white |
+| --- | --- | --- | --- | --- |
+| Primary | Blue | `#005CB9` | 300 C | **6.50:1 — the only text-safe color** |
+| Primary | Green | `#62BB46` | 368 CVC | 2.41:1 — fills only |
+| Primary | Red | `#ED174C` | 199 CV | 4.35:1 — large text / graphics only |
+| Accent | Light Blue | `#8CCFFA` | 2905 C | 1.69:1 — fills only |
+| Accent | Neutral | `#FBD1A2` | 155 C | 1.42:1 — fills only |
+| Accent | Gray | `#B0B1B3` | Cool Gray 5 C | 2.15:1 — fills only |
+
+> **This is a print palette — build UI on the blue.** Only `#005CB9` clears 4.5:1 for body
+> text; every other color is a fill or a large-format accent. Semantic up/down indicators need
+> darkened derivatives (the greens and reds above will not pass as small text). Blue is also
+> the safe structural choice because it competes with neither Chuck E. Cheese purple nor
+> Peter Piper red, so corporate furniture never fights a brand's content.
+
+**Fonts:** the guidelines specify **Gibson** (headline/body) and **Alisha** (callouts), both
+licensed desktop fonts that must be purchased per user, with **Calibri** as the sanctioned
+fallback. Neither Gibson nor Alisha is licensed for web embedding here, so web and report work
+runs on the system stack instead -- a deliberate exception, not an oversight.
+
+**Coverage note:** no black/monochrome variant ships, and no `-reversed` (the corporate mark
+has no single element worth keeping in color the way the CEC roundel does) -- `-white` is the
+only dark-background treatment.
 
 ### `logos/birthday-parties/` (8 files) — birthday-program lockup
 
