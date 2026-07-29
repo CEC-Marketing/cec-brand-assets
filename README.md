@@ -34,7 +34,7 @@ cec-brand-assets/
 ├─ characters/              ← 155 character PNGs across 7 character folders + 2 group shots
 ├─ graphic-elements/        ← 42 PNGs (4 underlines + 2 dot patterns + 17 coins + 7 3D props + 6 round wrappers + 6 stars)
 ├─ icons/                   ← 8,390 icon & emoji PNGs across 6 sets (incl. full Apple + OpenMoji emoji libraries)
-├─ logos/                   ← 90 logo files across 10 CEC sub-brand folders + 1 competitor-logos folder
+├─ logos/                   ← 106 logo files: 62 CEC across 10 brand folders + 16 Peter Piper across 2 + 28 competitor
 └─ photos/                  ← 191 real-world photos across 8 themed subfolders
 ```
 
@@ -43,7 +43,7 @@ underscores, no uppercase letters. URLs work as-is without `%20` encoding. The t
 libraries (`icons/apple/`, `icons/openmoji/`) were renamed from Unicode codepoints to their
 descriptive emoji names, so they follow the same pick-by-intent convention as everything else.
 
-**Total: 8,880 files.**
+**Total: 8,896 files.**
 
 ---
 
@@ -218,10 +218,12 @@ Color combos: `blue-orange`, `blue-purple`, `green-purple`, `green-purple2`, `or
 
 ## 4. `logos/` — Logo lockups (PNG / JPG)
 
-90 logo files: **62 CEC-brand logos** across 10 sub-brand folders, plus **28 competitor
-logos** in `competitor-logos/` (see the competitor-logos section at the end of §4). All
-filenames are descriptive kebab-case so an AI can pick by intent (layout + tagline + color
-treatment).
+106 logo files in three groups: **62 Chuck E. Cheese logos** across the master-brand folder
+plus 9 CEC sub-brand folders; **16 Peter Piper Pizza logos** across `peter-piper-pizza/` and
+`peter-piper-play-park/` (PPP is a separate banner brand, not a CEC sub-brand); and **28
+competitor logos** in `competitor-logos/` (see the competitor-logos section at the end of
+§4). All filenames are descriptive kebab-case so an AI can pick by intent (layout + tagline
++ color treatment).
 
 **Master CEC brand naming convention** (sub-brand folders follow simpler patterns):
 
@@ -266,6 +268,80 @@ treatment).
 
 **Coverage note:** Wordmark-Horizontal and Wordmark-Stacked don't ship a `-white` variant
 (only `-black` and `-reversed`). Mark-Roundel ships `-reserved` (not `-reversed`).
+
+### `logos/peter-piper-pizza/` (15 files) — second banner brand
+
+Peter Piper Pizza is a **separate banner**, not a Chuck E. Cheese sub-brand — never mix a
+PPP lockup with CEC brand furniture on the same slide or report header. Filenames follow the
+same `<layout>-<treatment>` grammar as `cec-logo-*`, so the master-brand convention above
+reads across:
+
+- **Layout suffix:**
+  - `horizontal-1-line` — medallion left + "peter piper pizza" on one line (compact; the
+    workhorse for report mastheads, email headers, and footer bylines)
+  - `horizontal-3-line` — medallion left + wordmark stacked "peter / piper / pizza" right
+  - `vertical` — medallion above the 3-line wordmark, centered (portrait compositions)
+- **Color treatment suffix:**
+  - *(no suffix)* — full-color: segmented red/gold/lime/green medallion
+  - `-black` / `-white` / `-red` — single-color knockouts
+  - `-reversed` — full-color medallion + white wordmark (dark backgrounds)
+  - `-*-outline` — line-art medallion (thin circle, open counters) instead of the solid
+    or segmented fill; for single-color print, embroidery, and etched/engraved applications
+  - `-reversed-two-tone` *(vertical only)* — full-color medallion, white "peter piper",
+    gold "pizza" — the dark-background counterpart that keeps the wordmark's two-tone
+
+| File | Description |
+| --- | --- |
+| `ppp-logo-horizontal-1-line.png` | Full-color medallion + red wordmark on one line. **The default PPP logo** — use unless you have a reason not to. |
+| `ppp-logo-horizontal-1-line-black.png` | Same layout, solid black medallion + black wordmark. |
+| `ppp-logo-horizontal-1-line-red.png` | Same layout, solid red medallion + red wordmark (single-color brand red). |
+| `ppp-logo-horizontal-1-line-white.png` | Same layout, all white (dark/photo backgrounds). |
+| `ppp-logo-horizontal-1-line-reversed.png` | Full-color medallion + white wordmark — dark backgrounds while keeping the medallion in brand color. |
+| `ppp-logo-horizontal-3-line.png` | Full-color medallion (white keyline) + red "peter piper" over gold "pizza". The primary tall-horizontal lockup. |
+| `ppp-logo-horizontal-3-line-reversed.png` | Same, wordmark all white — dark backgrounds. |
+| `ppp-logo-horizontal-3-line-black-outline.png` | Line-art medallion + black 3-line wordmark. |
+| `ppp-logo-horizontal-3-line-red-outline.png` | Line-art medallion + red 3-line wordmark. |
+| `ppp-logo-horizontal-3-line-white-outline.png` | Line-art medallion + white 3-line wordmark (dark backgrounds). |
+| `ppp-logo-vertical.png` | Full-color medallion above red "peter piper" + gold "pizza". The primary portrait lockup. |
+| `ppp-logo-vertical-reversed.png` | Full-color medallion + all-white wordmark, centered. |
+| `ppp-logo-vertical-reversed-two-tone.png` | Full-color medallion + white "peter piper" + gold "pizza" — keeps the two-tone on dark backgrounds. |
+| `ppp-logo-vertical-black-outline.png` | Line-art medallion above black wordmark, centered. |
+| `ppp-logo-vertical-white.png` | Solid white medallion above white wordmark, centered. |
+
+**PPP brand palette** (from the `ppp-brand` skill — authoritative for charts, tiles, and
+report chrome):
+
+| Role | Name | PMS | HEX |
+| --- | --- | --- | --- |
+| Primary | Red | 485 C | `#dc291e` |
+| Primary | Yellow/Gold | 7549 C | `#ffb700` |
+| Primary | Blue | 279 C | `#3da4f9` |
+| Accent | Bright Blue | 2727 C | `#0c8df7` |
+| Accent | Lime Green | 381 C | `#c9dd0a` |
+| Accent | Green | 368 C | `#66bc29` |
+| Text | White / Black | — | `#ffffff` / `#231f20` |
+
+> The *artwork* in these PNGs was drawn with slightly different values than the brand
+> standard (medallion red samples `#EE2E24`, gold `#FFAB00`/`#FDB614`, lime
+> `#D6E03D`/`#CADB2F`, green `#46AA42`/`#7AC142`), and the `-1-line` files come from an
+> older build than the `-3-line`/`vertical` set. This is expected — match surrounding
+> design elements to the palette table above, not to a color picked off the logo.
+
+**Coverage notes:** No mark-only (medallion without wordmark) file ships — if you need a
+favicon or social avatar, crop one from a `-vertical` file. The 1-line family has no
+`-outline` variant, and the 3-line/vertical families have no solid `-black`/`-red` fill
+(only `-outline`) — so single-color needs are covered by different layouts at different
+weights.
+
+### `logos/peter-piper-play-park/` (1 file) — PPP indoor-playground concept
+
+- `peter-piper-play-park-logo.png` — "peter piper" in white script above a bold green
+  "PLAY PARK" wordmark on a lime/green gradient with a white keyline, sparkle-and-swoosh
+  motifs at both ends. The PPP counterpart to Chuck E. Cheese's Adventure World /
+  Superhero Playground concepts. Delivered on a 1920×1080 transparent canvas that the
+  artwork does **not** fill evenly — it sits bottom-anchored (opaque bounds are x 42–1845,
+  y 283–1080), so ~26% of the top is empty and the mark runs flush to the bottom edge.
+  Trim to the alpha bounding box before placing it, or it will look badly off-center.
 
 ### `logos/birthday-parties/` (8 files) — birthday-program lockup
 
