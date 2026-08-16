@@ -32,7 +32,8 @@ first (e.g. `photos/food/pepperoni-pizza-cheese-pull.jpg`, `logos/chuck-e-cheese
 cec-brand-assets/
 ├─ README.md                ← this file
 ├─ backgrounds/             ← 12 brand background JPGs (1200×1200)
-├─ characters/              ← 155 character PNGs across 7 character folders + 2 group shots
+├─ characters/              ← 203 character PNGs: 7 character folders + 2 group shots
+│                             + report-poses/ (48 commissioned report-masthead cutouts)
 ├─ graphic-elements/        ← 42 PNGs (4 underlines + 2 dot patterns + 17 coins + 7 3D props + 6 round wrappers + 6 stars)
 ├─ icons/                   ← 8,390 icon & emoji PNGs across 6 sets (incl. full Apple + OpenMoji emoji libraries)
 ├─ logos/                   ← 112 logo files: 62 Chuck E. Cheese across 10 brand folders + 16 Peter Piper across 2 + 6 CEC Entertainment corporate + 28 competitor
@@ -162,6 +163,35 @@ and the original `ronnie-3d-in-orignal-pose.jpg` (highest-fidelity master).
 ### Top-level group shots
 - `cec-birthday-groupshot.png` — full band styled for a birthday scene.
 - `full-band.png` — generic full-band lineup.
+
+### `characters/report-poses/` (48 files)
+
+Commissioned poses, **one per report family on CEC Insights** — the art that
+tops a report masthead. Generated on the brand purple (`#502281`) and keyed
+out, so every file is a transparent cutout, bottom-anchored, 720px tall
+(2× the 330px masthead slot) and 230–670KB.
+
+These exist because the masthead used to cast from this general-purpose
+library through a 14-slot table: 1,020 reports across 221 series shared a
+handful of stock cutouts, and anything that matched no keyword fell through
+to *Chuck E. waving*. Each pose here is matched to what a report is actually
+about, and to the character whose personality fits that subject — Helen for
+games and standings, Jasper for districts, stores and anything needing a
+watchdog, Munch for data and systems, Bella for research and guides,
+Pasqually for food only, Ronnie for prizes only.
+
+Naming is `{character}-{action}.png` (`jasper-map-salute.png`,
+`munch-empty-coin-purse.png`, `band-lineup-cheering.png`). The mapping from
+report family to file is the `CHARACTERS` table in
+`cec-market-intelligence/pipeline/_report_css.py` — **edit that table rather
+than renaming a file here**, and never guess a path.
+
+Two slots are still borrowed and want commissioning: a Bella-at-the-easel
+pose for how-to guides, and a plain Chuck E. wave for the default fallback.
+
+**These are Chuck E. Cheese IP.** No character of any kind belongs on a Peter
+Piper Pizza report — the PPP gift-card, guest-satisfaction and
+birthday-satisfaction editions use the logo lockup on the red wash instead.
 
 ---
 
