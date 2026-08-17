@@ -3,12 +3,32 @@
 Public bundle of brand-safe visual assets across the CEC Entertainment family —
 **Chuck E. Cheese**, **Peter Piper Pizza**, and the **CEC Entertainment** corporate brand
 itself: **logos, photography, character cutouts, brand backgrounds, and graphic elements.** Pull
-any of these into a deck, a web page, or other materials by name or by stable
-GitHub URL:
+any of these into a deck, a web page, or other materials by name or by stable URL:
 
 ```
-https://cdn.jsdelivr.net/gh/CEC-Marketing/cec-brand-assets@main/<path-to-file>
+https://newsletter.chuckecheese.com/intel/brand/<path-to-file>
 ```
+
+> ### ⚠️ Do not use a jsDelivr URL for this repo — it is dead
+>
+> `cdn.jsdelivr.net/gh/CEC-Marketing/cec-brand-assets@...` returns
+> **`403 Package size exceeded the configured limit of 50 MB`** for every uncached path.
+> This library is 289 MB, so the cap is permanent; it applies to files as well as the
+> listing API, and pinning to a commit SHA does not get around it. Any jsDelivr URL you
+> find in older material is broken — replace it with the host above.
+> `raw.githubusercontent.com` is not a fallback either: it is not an asset host, and it
+> silently broke marketing email once already when this repo changed GitHub orgs.
+>
+> Three things about the host, all of which have cost someone an hour:
+> - **A missing file returns HTTP 200 with an HTML body, not a 404.** Verify by
+>   content-type or magic bytes (PNG `89 50 4E 47`, JPEG `FF D8 FF`), never by status code.
+> - **Fetching from a script needs a browser `User-Agent`.** Cloudflare 403s
+>   `Python-urllib` and any request with no UA. Every real mail client passes (Gmail,
+>   Outlook, Apple Mail, Yahoo), so this affects tooling only.
+> - **Published assets are effectively immutable** — `max-age=31536000` behind a CDN, so
+>   replacing a file at the same name serves stale indefinitely. New art goes up under a
+>   **new filename**, and must be re-published with
+>   `cec-market-intelligence/pipeline/publish_brand_assets.py` before its URL resolves.
 
 All filenames are descriptive kebab-case so you can pick by intent without opening the file
 first (e.g. `photos/food/pepperoni-pizza-cheese-pull.jpg`, `logos/chuck-e-cheese/cec-logo-horizontal-1-line-reversed.png`).
